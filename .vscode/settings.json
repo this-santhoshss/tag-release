@@ -6,5 +6,9 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
     },
+    "[yml]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
     "typescript.tsdk": "node_modules/typescript/lib",
 }
