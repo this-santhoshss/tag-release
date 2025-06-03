@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        /* Module Resolution */
+        "module": "ESNext",
+        "target": "es2022",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "forceConsistentCasingInFileNames": true,
+        /* Strictness */
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "skipLibCheck": true,
+        /* Emit handled by tsup */
+        "noEmit": true
+    },
+    "exclude": [
+        "tsup.config.ts"
+    ]
+}

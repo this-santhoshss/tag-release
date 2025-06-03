@@ -1,0 +1,76 @@
+{
+  "manifestVersion": 1,
+  "id": "tag-release-for-git",
+  "name": "Tag Release for Git",
+  "version": "0.0.13",
+  "publisher": "cntechy",
+  "public": true,
+  "visibility": ["public"],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "A cross-platform Azure DevOps extension for tagging Git repositories with customizable tag names and messages.",
+  "categories": ["Azure Pipelines"],
+  "tags": ["git", "tag", "version", "release", "build"],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "screenshots": [
+    {
+      "path": "images/screenshot1.png"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE.md"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/this-santhoshss/tag-release"
+    },
+    "support": {
+      "uri": "https://github.com/this-santhoshss/tag-release/issues"
+    },
+    "repository": {
+      "uri": "https://github.com/this-santhoshss/tag-release"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/this-santhoshss/tag-release"
+  },
+  "branding": {
+    "color": "rgb(34, 34, 34)",
+    "theme": "dark"
+  },
+  "files": [
+    {
+      "path": "tasks/TagReleaseForGit"
+    },
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+      "path": "README.md",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "tag-release-for-git-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "tasks/TagReleaseForGit",
+        "displayName": "Tag Release for Git"
+      }
+    }
+  ]
+}

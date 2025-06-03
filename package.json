@@ -1,0 +1,47 @@
+{
+  "name": "tag-release-for-git",
+  "version": "0.0.13",
+  "description": "Azure DevOps extension for tagging Git repositories",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "install:tasks": "node scripts/install-all-tasks.js",
+    "typecheck": "tsc --noEmit",
+    "extension-package": "tfx extension create --manifest-globs vss-extension.json --trace-level verbose",
+    "package": "npm run clean &&  npm run install:tasks && npm run build && npm run extension-package",
+    "clean": "rimraf dist \"Tasks/**/dist\" *.vsix",
+    "prebuild": "npm run clean"
+  },
+  "keywords": [
+    "azure-devops",
+    "git",
+    "tagging",
+    "build-task"
+  ],
+  "author": "Santhosh Sasidharan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/this-santhoshss/tag-release.git"
+  },
+  "homepage": "https://github.com/this-santhoshss/nodezipup",
+  "bugs": {
+    "url": "https://github.com/this-santhoshss/nodezipup/issues"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@types/node": "^22.15.29",
+    "copyfiles": "^2.4.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-import-resolver-typescript": "^4.3.4",
+    "eslint-plugin-import-x": "^4.11.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "tfx-cli": "^0.21.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.1"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "37708187-d8f4-4e3b-8461-d1fdeb895af9",
+  "name": "tag-release-for-git",
+  "friendlyName": "Tag Release for Git",
+  "description": "Create and push Git tags to repository with customizable tag names and messages",
+  "helpMarkDown": "[More Information](https://github.com/this-santhoshss/tag-release)",
+  "category": "Utility",
+  "visibility": ["Build", "Release"],
+  "author": "Santhosh Sasidharan",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 13
+  },
+  "instanceNameFormat": "Create Git Tag: $(tagName)",
+  "groups": [
+    {
+      "name": "authentication",
+      "displayName": "Authentication",
+      "isExpanded": false
+    },
+    {
+      "name": "advanced",
+      "displayName": "Advanced Options",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "tagName",
+      "type": "string",
+      "label": "Tag Name",
+      "defaultValue": "$(Build.BuildNumber)",
+      "required": true,
+      "helpMarkDown": "The name of the tag to create. Supports Azure DevOps variables."
+    },
+    {
+      "name": "tagMessage",
+      "type": "multiLine",
+      "label": "Tag Message",
+      "defaultValue": "Release $(Build.BuildNumber)",
+      "required": false,
+      "helpMarkDown": "Optional message for the tag."
+    },
+    {
+      "name": "failOnExistingTag",
+      "type": "boolean",
+      "label": "Fail if Tag Exists",
+      "defaultValue": "true",
+      "required": false,
+      "helpMarkDown": "Whether to fail the task if the tag already exists.",
+      "groupName": "advanced"
+    },
+    {
+      "name": "authMethod",
+      "type": "pickList",
+      "label": "Authentication Method",
+      "defaultValue": "systemAccessToken",
+      "required": true,
+      "options": {
+        "systemAccessToken": "System Access Token",
+        "serviceConnection": "Service Connection"
+      },
+      "helpMarkDown": "Method to authenticate with the Git repository.",
+      "groupName": "authentication"
+    },
+    {
+      "name": "serviceConnection",
+      "type": "connectedService:git",
+      "label": "Git Service Connection",
+      "required": false,
+      "helpMarkDown": "Git service connection for authentication.",
+      "groupName": "authentication",
+      "visibleRule": "authMethod = serviceConnection"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "dist/index.js",
+      "argumentFormat": ""
+    },
+    "Node20_1": {
+      "target": "dist/index.js",
+      "argumentFormat": ""
+    }
+  }
+}

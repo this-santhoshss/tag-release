@@ -1,0 +1,8 @@
+{
+  "name": "tag-release-for-git",
+  "author": "Santhosh Sasidharan",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "azure-pipelines-task-lib": "^4.6.0"
+  }
+}

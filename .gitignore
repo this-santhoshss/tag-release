@@ -1,0 +1,11 @@
+node_modules
+dist
+
+*.vsix
+.taskkey
+
+.DS_Store
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
